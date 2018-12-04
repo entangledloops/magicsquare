@@ -10,15 +10,15 @@ import java.util.Random;
  */
 public class MagicSquare extends JFrame
 {
-  final boolean      enableGui         = false; // show search in gui
+  final boolean      enableGui         = true; // show search in gui
   final boolean      allowDupes        = false; // allow duplicate numbers?
-  final int          size              = 5; // square will be size*size
-  final int          power             = 3; // 2 = bimagic, 3 = cubic, etc.
+  final int          size              = 10; // square will be size*size
+  final int          power             = 1; // 2 = bimagic, 3 = trimagic, etc.
   final long         seed              = 3493;
   final int          upperBound        = size*size*4;
   final int          lowerBound        = 1;
   final long         improveIterations = 10; // number of resample attempts per cell
-  final long         improveRounds     = 10000; // number of resample iterations per square
+  final long         improveRounds     = 1000; // number of resample iterations per square
   final long         minUpdates        = 1; // min number of updates in a round needed to keep search going
   final long         maxRestarts       = 1000; // number of restart attempts per solve()
   final long[][]     square            = new long[size][size];
@@ -48,7 +48,7 @@ public class MagicSquare extends JFrame
       }
     }
 
-    setSize(800, 600);
+    setSize(1024, 768);
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     setVisible(true);
