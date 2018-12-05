@@ -35,8 +35,11 @@ public class MagicSquare extends JFrame
   public MagicSquare()
   {
     super();
-    if (!enableGui) return;
+    if (enableGui) createGui();
+  }
 
+  private void createGui()
+  {
     final JPanel panel = new JPanel(new GridLayout(size, size));
     final Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
